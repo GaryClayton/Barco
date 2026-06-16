@@ -1,0 +1,40 @@
+{% extends "reports/report.html" %}
+
+{% block title %} Meeting Report {% endblock title %}
+
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+
+    <h3><u>Report showing which members are in which access groups</u></h3>
+
+    <table style="border-collapse:collapse">
+        <tr class ="companyhdr">
+            <th>Name</th>
+            <th>Member</th>
+            <th>Community Service</th>
+            <th>Fundraising</th>
+            <th>Meeting Management</th>
+            <th>Document Management</th>
+            <th>Author</th>
+        </tr>
+        {% for x in data %}
+            <tr class="companyrow {% cycle '' 'altrow' %}">
+                <td>{{ x.0 }}</td>
+                <td>{{ x.1|yesno:"✔,-"}}</td>
+                <td>{{ x.2|yesno:"✔,-" }}</td>
+                <td>{{ x.3|yesno:"✔,-" }}</td>
+                <td>{{ x.4|yesno:"✔,-" }}</td>
+                <td>{{ x.5|yesno:"✔,-" }}</td>
+                <td>{{ x.6|yesno:"✔,-" }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock content %}

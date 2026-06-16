@@ -1,0 +1,16 @@
+{% extends "reports/report.html" %}
+
+{% block title %} Reports {% endblock title %}
+
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+    <p class = "fail" >Your document has not been stored - If problem persists contact site administrator</p>
+    <p><a href="show">Click here to return</a> </p>
+
+{% endblock content %}

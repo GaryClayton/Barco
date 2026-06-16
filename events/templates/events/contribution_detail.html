@@ -1,0 +1,59 @@
+{% extends "events/event.html" %}
+
+{% block title %}All Event Contributions{% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+<h1>{{ event }}</h1>
+<h2>Total company support = {{ sponsor_total.0 }}</h2>
+<h3>Sponsors - Total sponsorship = {{ sponsor_total.1 }}</h3>
+<table style="border-collapse:collapse">
+    <tr class ="companyhdr">
+        <th>ID</th>
+        <th>Company</th>
+        <th>Support</th>
+        <th>Value</th>
+        <!-- <th>Event</th> -->
+    </tr>
+
+    {% for value in sponsor|dictsort:1 %}
+        <tr class="companyrow {% cycle '' 'altrow' %}">
+            <td>{{ value.0 }}</td>
+            <td><a href="/company/show/{{ value.5 }}?filter={{ value.5}}">{{ value.1 }}</a></td>
+            <td>{{ value.2 }}</td>
+            <td>{{ value.3 }}</td>
+            <!-- <td>{{ value.4 }}</td> -->
+        </tr>
+
+    {% endfor %}
+</table>
+<p></p>
+<h3>Other - Total Non-Sponsors = {{ sponsor_total.2 }}</h3>
+<table style="border-collapse:collapse">
+    <tr class ="companyhdr">
+        <th>ID</th>
+        <th>Company</th>
+        <th>Support</th>
+        <th>Value</th>
+        <!-- <th>Event</th> -->
+    </tr>
+
+    {% for value in data|dictsort:1 %}
+        <tr class="companyrow {% cycle '' 'altrow' %}">
+            <td>{{ value.0 }}</td>
+            <td><a href="/company/show/{{ value.5 }}?filter={{ value.5}}">{{ value.1 }}</a></td>
+            <td>{{ value.2 }}</td>
+            <td>{{ value.3 }}</td>
+            <!-- <td>{{ value.4 }}</td> -->
+        </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock content %}
+

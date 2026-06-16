@@ -1,0 +1,39 @@
+{% extends "pages/page.html" %}
+
+{% block title %}Contact Us{% endblock title %}
+
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+
+{% endblock sidenav %}
+
+{% block content %}
+<section class="rotary-intro">
+    <h2>Contact Us</h2>
+    <p>Please use the email form below to contact site Admin if there are any data omissions,
+        inacuracys or alterations required</p>
+    <p>This form can also be used to request and GDPR questions that may arise</p>
+
+    <p><b>Please be patient after submission.</b></p>
+    {% if submitted %}
+        <p class="success">
+            Your message was submitted successfuly. Thank you.
+        </p>
+
+    {% else %}
+        <form action="" method="post" novalidate>
+        <table>
+            {{ form.as_table }}
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+        {% csrf_token %}
+        </form>
+    {% endif %}
+</section>
+{% endblock content %}

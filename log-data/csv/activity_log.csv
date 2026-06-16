@@ -1,0 +1,215 @@
+Admin,2026-02-12 16:14:47,Company contact Asasa,Edit,Low
+Admin,2026-02-15 12:09:54,File Deleted - barc_root/uploads/2026-01-12_BARC_BM__Minutes.pdf,Delete,Low
+Admin,2026-02-15 12:17:47,Quote delete exception - type object 'Quote' has no attribute 'objetcs',System,High
+Admin,2026-02-15 12:18:45,Quote delete exception - 'Manager' object has no attribute 'delete',System,High
+Admin,2026-02-15 12:26:40,"Quote delete exception - remove: path should be string, bytes or os.PathLike, not FieldFile",System,High
+Admin,2026-02-15 12:27:29,"Quote delete exception - remove: path should be string, bytes or os.PathLike, not FieldFile",System,High
+Admin,2026-02-15 12:28:50,"Quote delete exception - remove: path should be string, bytes or os.PathLike, not FieldFile",System,High
+Admin,2026-02-15 12:31:39,File Deleted - barc_root/uploads/Rotary_Teams_2025-2026_Y8EOwwO.pdf,Delete,Low
+Admin,2026-02-15 12:32:12,File Deleted - barc_root/uploads/BARC_Database_Diagram.pdf,Delete,Low
+Admin,2026-02-15 13:03:03,Meeting attendance email sent,Admin,Low
+Admin,2026-02-15 14:02:32,File Uploadbarc_root/uploads/2026-01-12_BARC_BM__Minutes.pdf,Upload,Low
+Admin,2026-02-15 14:03:25,File Deleted - barc_root/uploads/At_Last_rev_-_Tenor_Saxophone.pdf,Delete,Low
+Admin,2026-02-17 16:26:34,All Log Records Deleted,Delete,Low
+Admin,2026-02-17 16:26:45,All Log Records Deleted,Delete,Low
+,2026-02-17 17:19:03,Login Failed - Unrecognised username= Fred or password= 'Unknown',System,Normal
+,2026-02-17 17:19:10,Login Failed - Unrecognised username= Fredfred or password= 'Unknown',System,Normal
+,2026-02-17 17:20:50,Login Failed - Unrecognised username= Fredfred or password= '*******',System,Normal
+,2026-02-17 17:21:23,Login Failed - Unrecognised username= QWERTY or password= '*******',System,Normal
+Unknown,2026-02-17 17:24:17,Login Failed - Unrecognised username= QWERTY or password= '*******',System,Normal
+Unknown,2026-02-17 17:24:28,Login Failed - Unrecognised username= loikjuhjsdjhsdafjkfsdaY or password= '*******',System,Normal
+Admin,2026-02-17 17:32:04,Login Successful -  username= Admin,System,Normal
+Admin,2026-02-17 17:34:02,User LOgged Out,System,Normal
+Admin,2026-02-17 17:34:05,Login Successful,System,Normal
+Admin,2026-02-17 17:34:07,User LOgged Out,System,Normal
+Admin,2026-02-17 17:34:39,Login Successful,System,Normal
+Admin,2026-02-17 17:36:13,User LOgged Out,System,Normal
+Unknown,2026-02-17 17:36:20,Login Failed - Unrecognised username= Hytgfred or password,System,Normal
+Admin,2026-02-17 17:36:26,Login Successful,System,Normal
+Admin,2026-02-17 17:39:05,User LOgged Out,System,Log Data
+Unknown,2026-02-17 17:39:10,Login Failed - Unrecognised username= sdfdfgsgnbfh or password,System,Log Data
+Admin,2026-02-17 17:39:14,Login Successful,System,Log Data
+Admin,2026-02-17 17:40:03,User LOgged Out,System,Log Data
+Admin,2026-02-18 16:33:14,Login Successful,System,Log Data
+Admin,2026-02-18 16:33:22,User LOgged Out,System,Log Data
+Admin,2026-02-18 16:33:30,Login Successful,System,Log Data
+Admin,2026-02-18 16:36:49,User LOgged Out,System,Log Data
+Admin,2026-02-19 13:33:23,Login Successful,System,Log Data
+Admin,2026-02-19 13:57:57,Login Successful,System,Log Data
+Admin,2026-02-19 14:39:18,Login Successful,System,Log Data
+Admin,2026-02-19 14:39:23,CRM Entry,CRM,Low
+Admin,2026-02-19 14:39:32,"Exception raisedCannot assign ""221"": ""CRM.company"" must be a ""Company"" instance.adding CRM for 221",CRM,Low
+Admin,2026-02-19 14:39:32,New CRM Entry221,CRM,Low
+Admin,2026-02-19 14:42:16,User LOgged Out,System,Log Data
+Admin,2026-02-19 14:42:19,Login Successful,System,Log Data
+Admin,2026-02-19 14:42:26,CRM Entry,CRM,Low
+Admin,2026-02-19 14:42:34,"Exception raisedCannot assign ""221"": ""CRM.company"" must be a ""Company"" instance.adding CRM for 221",System,Medium
+Admin,2026-02-19 14:42:35,New CRM Entry221,CRM,Low
+Admin,2026-02-19 14:46:39,CRM Entry,CRM,Low
+Admin,2026-02-19 14:46:48,"Exception raised Cannot assign ""221"": ""CRM.company"" must be a ""Company"" instance.adding CRM for 221",System,Medium
+Admin,2026-02-19 14:46:48,New CRM Entry 221,CRM,Low
+Admin,2026-02-19 14:49:03,CRM Entry,CRM,Low
+Admin,2026-02-19 14:49:10,"Exception raised Cannot assign ""221"": ""CRM.company"" must be a ""Company"" instance.adding CRM for 221",System,Medium
+Admin,2026-02-19 14:49:10,New CRM Entry 221,CRM,Low
+Admin,2026-02-19 14:53:07,CRM Entry,CRM,Low
+Admin,2026-02-19 14:53:13,New CRM Entry 221,CRM,Low
+Admin,2026-02-19 14:53:51,CRM Entry,CRM,Low
+Admin,2026-02-19 14:54:03,New CRM Entry 221,CRM,Low
+Admin,2026-02-19 14:58:23,New CRM Entry 221,CRM,Low
+Admin,2026-02-19 15:00:25,Company contact Gary,Edit,Low
+Admin,2026-02-22 13:43:48,Login Successful,System,Log Data
+Admin,2026-02-22 13:43:52,User LOgged Out,System,Log Data
+Admin,2026-02-22 13:43:59,Login Successful,System,Log Data
+Admin,2026-02-22 13:47:34,Login Successful,System,Log Data
+Admin,2026-02-22 13:50:23,Login Successful,System,Log Data
+Admin,2026-02-22 14:09:45,Login Successful,System,Log Data
+Admin,2026-02-22 14:10:39,Login Successful,System,Log Data
+Admin,2026-02-22 14:13:11,Login Successful,System,Log Data
+Admin,2026-02-22 14:23:41,Company contact John Doe,Edit,Low
+Admin,2026-02-22 14:23:50,Company contact John Doe,Edit,Low
+Admin,2026-02-22 14:30:25,Company contact Faye Stolls,Edit,Low
+Admin,2026-02-22 14:30:51,Company contact Him and Her,Edit,Low
+Admin,2026-02-22 15:59:28,Login Successful,System,Log Data
+Admin,2026-02-22 15:59:59,New Company Contact,Addition,Low
+Admin,2026-02-22 16:01:20,Company contact who cares,Edit,Low
+Admin,2026-02-22 16:01:43,Club Contact Form,Addition,Low
+Admin,2026-02-22 16:01:54,Club contact Who Flung Dung's brother at 221,Edit,Low
+Admin,2026-02-22 16:02:27,New Company Contribution,Addition,Low
+Admin,2026-02-22 16:02:43,221 Contribution for 2,Edit,Low
+Admin,2026-02-22 16:19:19,Login Successful,System,Log Data
+Admin,2026-02-22 16:37:33,Login Successful,System,Log Data
+Admin,2026-02-23 16:05:51,Login Successful,System,Log Data
+Admin,2026-02-23 16:07:18,User LOgged Out,System,Log Data
+Admin,2026-02-23 16:07:45,Login Successful,System,Log Data
+Admin,2026-02-23 16:14:15,User LOgged Out,System,Log Data
+Admin,2026-02-23 16:15:04,Login Successful,System,Log Data
+Admin,2026-02-23 16:16:01,User LOgged Out,System,Log Data
+Admin,2026-02-23 16:29:08,Login Successful,System,Log Data
+Admin,2026-02-26 16:12:36,Login Successful,System,Log Data
+Admin,2026-02-27 11:43:48,Login Successful,System,Log Data
+Admin,2026-02-27 11:44:09,User Logged Out,System,Log Data
+Admin,2026-02-27 12:53:20,Login Successful,System,Log Data
+Admin,2026-02-27 12:53:33,User Logged Out,System,Log Data
+Admin,2026-02-27 16:03:51,Login Successful,System,Log Data
+GaryClayton,2026-03-14 09:31:04,File Download - barc_root/uploads/Rotary_Teams_2025-2026.pdf,Download,Low
+GaryClayton,2026-03-20 17:34:16,New Meeting,Addition,Low
+GaryClayton,2026-03-20 17:34:42,New Meeting,Addition,Low
+GaryClayton,2026-03-20 18:18:50,Edit Meeting 5,Edit,Low
+GaryClayton,2026-03-20 18:23:34,Edit Meeting 6,Edit,Low
+GaryClayton,2026-03-20 18:23:50,Edit Meeting 5,Edit,Low
+GaryClayton,2026-03-20 18:23:52,New Meeting,Addition,Low
+GaryClayton,2026-03-20 18:24:04,New Meeting,Addition,Low
+GaryClayton,2026-03-20 18:24:31,Edit Meeting 10,Edit,Low
+GaryClayton,2026-03-20 18:25:27,New Meeting,Addition,Low
+GaryClayton,2026-03-20 18:26:17,New Meeting,Addition,Low
+GaryClayton,2026-03-21 16:33:31,New Meeting,Addition,Low
+GaryClayton,2026-03-21 16:33:40,New Meeting,Addition,Low
+GaryClayton,2026-03-21 16:45:28,New Meeting,Addition,Low
+GaryClayton,2026-03-21 16:45:49,New Meeting,Addition,Low
+GaryClayton,2026-03-21 17:36:20,New Meeting,Addition,Low
+GaryClayton,2026-03-21 17:36:26,New Meeting,Addition,Low
+GaryClayton,2026-03-21 17:38:38,Edit Meeting 12,Edit,Low
+GaryClayton,2026-03-21 17:45:46,New Meeting,Addition,Low
+GaryClayton,2026-03-21 17:45:59,New Meeting,Addition,Low
+GaryClayton,2026-03-21 18:00:28,New Meeting,Addition,Low
+GaryClayton,2026-03-21 18:00:44,New Meeting,Addition,Low
+GaryClayton,2026-03-28 08:27:25,Add User - Hall,Add,Low
+GaryClayton,2026-03-28 08:28:27,Edit User - Hall,Edit,Low
+GaryClayton,2026-03-28 08:29:27,Edit User - Hall,Edit,Low
+GaryClayton,2026-03-28 08:29:50,Edit User - Hall,Edit,Low
+GaryClayton,2026-03-31 09:03:36,Edit Meeting 11,Edit,Low
+Admin,2026-04-02 13:34:56,Edit Meeting 12,Edit,Low
+Admin,2026-04-05 12:53:39,Edit Meeting 11,Edit,Low
+Admin,2026-04-05 18:17:41,Edit club defaults 1968,Edit,Low
+Admin,2026-04-05 18:17:51,Edit club defaults 1968,Edit,Low
+Admin,2026-04-05 18:57:00,Edit club defaults 1968,Edit,Low
+Admin,2026-04-07 10:35:15,All Log Records Deleted,Delete,Low
+Admin,2026-04-07 16:06:38,Meeting attendance email sent,Admin,Low
+Admin,2026-04-07 16:09:03,Meeting attendance email sent,Admin,Low
+Admin,2026-04-07 16:10:51,Meeting attendance email sent,Admin,Low
+GaryClayton,2026-04-07 16:30:04,Edit Meeting 11,Edit,Low
+GaryClayton,2026-04-07 16:30:19,Meeting attendance email sent,Admin,Low
+GaryClayton,2026-04-07 16:36:43,Meeting attendance email sent,Admin,Low
+GaryClayton,2026-04-07 16:42:35,Meeting attendance email sent,Admin,Low
+Admin,2026-04-07 17:05:16,Meeting attendance email sent,Admin,Low
+Admin,2026-04-07 17:08:39,Meeting attendance email sent,Admin,Low
+Admin,2026-04-07 17:10:28,Meeting attendance email sent,Admin,Low
+GaryClayton,2026-04-08 08:16:26,New Company Contribution,Addition,Low
+GaryClayton,2026-04-08 08:28:31,New Company Contact,Addition,Low
+GaryClayton,2026-04-08 08:28:43,Company contact fred,Edit,Low
+GaryClayton,2026-04-08 08:36:34,Club Contact Form,Addition,Low
+GaryClayton,2026-04-08 17:28:09,New Company Contribution,Addition,Low
+GaryClayton,2026-04-08 17:28:40,New Company Contribution,Addition,Low
+GaryClayton,2026-04-09 19:11:33,New CRM Entry 221,CRM,Low
+GaryClayton,2026-04-09 19:27:27,New CRM Entry 5,CRM,Low
+Admin,2026-04-14 14:08:38,All Log Records Deleted,Delete,Low
+Admin,2026-04-14 14:26:16,Word file written,Archive,Low
+Admin,2026-04-14 14:26:21,Excel file written,Archive,Low
+Admin,2026-04-14 15:14:41,Excel file written,Archive,Low
+GaryClayton,2026-04-18 17:34:15,New Meeting,Addition,Low
+GaryClayton,2026-04-18 17:36:57,New Meeting,Addition,Low
+GaryClayton,2026-04-18 17:37:42,New Meeting,Addition,Low
+GaryClayton,2026-04-18 17:39:14,New Meeting,Addition,Low
+GaryClayton,2026-04-18 17:39:29,New Meeting,Addition,Low
+GaryClayton,2026-04-18 18:11:34,New Meeting,Addition,Low
+GaryClayton,2026-04-18 18:12:47,New Meeting,Addition,Low
+GaryClayton,2026-04-18 19:42:33,New Meeting,Addition,Low
+GaryClayton,2026-04-18 19:43:28,New Meeting,Addition,Low
+GaryClayton,2026-04-18 19:48:16,Edit Meeting 19,Edit,Low
+GaryClayton,2026-04-18 19:49:07,Edit Meeting 19,Edit,Low
+GaryClayton,2026-04-18 19:49:16,Edit Meeting 16,Edit,Low
+GaryClayton,2026-04-18 19:49:33,Edit Meeting 11,Edit,Low
+GaryClayton,2026-04-18 19:49:44,Edit Meeting 19,Edit,Low
+GaryClayton,2026-04-18 19:53:39,New Meeting,Addition,Low
+GaryClayton,2026-04-18 19:54:40,New Meeting,Addition,Low
+GaryClayton,2026-04-18 19:58:10,New Meeting,Addition,Low
+GaryClayton,2026-04-18 19:58:20,New Meeting,Addition,Low
+GaryClayton,2026-04-18 20:00:43,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-04-18 20:05:36,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-04-19 17:21:25,New Meeting,Addition,Low
+GaryClayton,2026-04-19 17:23:01,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-04-19 17:28:14,Edit club defaults 1968,Edit,Low
+GaryClayton,2026-04-23 12:21:14,Edit Meeting 19,Edit,Low
+GaryClayton,2026-04-23 12:21:47,Edit Meeting 17,Edit,Low
+GaryClayton,2026-04-23 12:22:03,Edit Meeting 19,Edit,Low
+GaryClayton,2026-04-23 12:54:21,Edit Meeting 19,Edit,Low
+GaryClayton,2026-04-23 12:57:28,Edit Meeting 17,Edit,Low
+GaryClayton,2026-04-23 12:57:34,Edit Meeting 16,Edit,Low
+GaryClayton,2026-04-23 13:09:27,Edit Meeting 16,Edit,Low
+GaryClayton,2026-04-23 13:10:15,Edit Meeting 21,Edit,Low
+GaryClayton.M,2026-04-27 11:40:25,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-04-28 17:51:54,Edit Meeting 17,Edit,Low
+GaryClayton,2026-04-28 17:52:33,Edit Meeting 16,Edit,Low
+GaryClayton,2026-04-28 17:53:31,Edit Meeting 18,Edit,Low
+GaryClayton,2026-04-28 18:00:22,New Meeting,Addition,Low
+GaryClayton,2026-04-28 18:00:56,New Meeting,Addition,Low
+GaryClayton,2026-04-28 18:01:18,New Meeting,Addition,Low
+GaryClayton,2026-04-28 18:01:27,New Meeting,Addition,Low
+GaryClayton,2026-04-28 18:04:22,Meeting attendance email sent,Admin,Low
+GaryClayton,2026-04-28 18:11:20,New Meeting,Addition,Low
+GaryClayton,2026-04-28 18:11:57,New Meeting,Addition,Low
+GaryClayton,2026-05-05 12:17:42,Edit Meeting 17,Edit,Low
+GaryClayton,2026-05-05 12:18:15,Edit Meeting 24,Edit,Low
+GaryClayton.M,2026-05-17 15:23:09,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 15:26:58,New Meeting,Addition,Low
+GaryClayton,2026-05-17 15:27:06,New Meeting,Addition,Low
+GaryClayton,2026-05-17 15:27:21,New Meeting,Addition,Low
+GaryClayton,2026-05-17 15:27:43,New Meeting,Addition,Low
+GaryClayton,2026-05-17 15:41:29,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 15:47:51,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 15:48:03,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 15:48:11,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 15:52:34,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 15:52:45,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 15:53:54,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 15:54:03,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 16:04:48,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 16:06:09,Edit Meeting 26,Edit,Low
+GaryClayton,2026-05-17 16:09:55,Edit Meeting 26,Edit,Low
+GaryClayton,2026-05-17 16:10:16,Edit Meeting 18,Edit,Low
+GaryClayton,2026-05-17 16:10:25,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 16:10:33,Manage Member Dietary Requirements,Addition,Low
+GaryClayton,2026-05-17 16:10:46,New Meeting,Addition,Low
+GaryClayton,2026-05-17 16:11:02,New Meeting,Addition,Low
+GaryClayton,2026-05-17 16:11:24,Edit Meeting 27,Edit,Low
+GaryClayton,2026-05-17 16:16:13,File Uploadbarc_root/uploads/Barco_User_Manual.pdf,Upload,Low

@@ -1,0 +1,58 @@
+{% extends "companys/company.html" %}
+
+{% block title %}All Companys{% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+<h2>Companies that have contributed by year</h2>
+<b>
+    {% for y in year %}
+    <span><a href="company_year/{{ y }}?filter={{ y }}"
+             title='Companies that have supported club in financial year {{ y }}'>'{{ y }}'</a>&emsp;</span>
+    {% endfor %}
+</b>
+
+<h2>All 'companies' known to club</h2>
+
+{% if 'Fundraising' in user.groups.all|join:"," %}
+    <p><a href=" {% url 'new-company-entry' %}"
+          title="Add a new company to the database - please check that it doesn't already exist">
+        Add New Company to Database</a>
+    </p>
+{% endif %}
+
+{% for l in letter %}
+    <span><a href="company_letter/{{ l }}?filter={{ l }}"
+             title='Companies listed by initial letter {{ l }}'>'{{ l }}'</a>&emsp;</span>
+{% endfor %}
+
+<table style="border-collapse:collapse">
+    <tr class ="companyhdr">
+        <th>ID</th>
+        <th>Company Name</th>
+        <th>Sector</th>
+        <th>SubSector</th>
+    </tr>
+    {% for company in data %}
+        <tr class="companyrow {% cycle '' 'altrow' %}">
+            <!-- {% if 'Fundraising' in user.groups.all|join:"," %}
+                <td><a href="edit-company/{{ company.0 }}?filter={{ company.0 }}" title="'Edit Company Detail">{{ company.0 }}</a></td>
+            {% elif 'Author' in user.groups.all|join:"," %}
+                <td><a href="edit-company/{{ company.0 }}?filter={{ company.0 }}" title="'Edit Company Detail">{{ company.0 }}</a></td>
+            {% else %}
+                <td>{{ company.0 }}</td>
+            {% endif %} -->
+            <td>{{ company.0 }}</td>
+            <td><a href="show/{{ company.0 }}?filter={{ company.0 }}" title="'View Company Detail">{{ company.1 }}</a></td>
+            <td>{{ company.2 }}</td>
+            <td>{{ company.3 }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock content %}
+

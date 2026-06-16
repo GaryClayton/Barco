@@ -1,0 +1,70 @@
+{% extends "companys/company.html" %}
+
+{% block title %}All Companys{% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+
+   <h3>Database Statistics</h3>
+
+    <table class="company">
+        <tr><td>Companies:</td><td>{{ companies }}</td></tr>
+        <tr><td>Company Points of Contact:</td><td>{{ comp_cons }}</td></tr>
+        <tr><td>Club Points of Contact:</td><td>{{ club_cons }}</td></tr>
+        <tr><td>Company Contributions:</td><td>{{ contribs }}</td></tr>
+        <tr><td>CRM Entries</td><td>{{ crm }}</td></tr>
+        <tr><td>Documents</td><td>{{ docs }}</td></tr>
+        <tr><td>Non-Expired Sessions</td><td>{{ authenticated }}</td></tr>
+    </table>
+
+    <br><br>
+
+    <h3>User Last Log_in dates</h3>
+    <table style="border-collapse:collapse">
+        <tr class ="companyhdr">
+            <th>Name</th>
+            <th>Day</th>
+            <th>Month</th>
+            <th>Year</th>
+            <th>Time</th>
+        </tr>
+
+        {% for user in logged_in %}
+            <tr class="companyrow {% cycle '' 'altrow' %}">
+                <td>{{ user.0 }}</td>
+                <td>{{ user.1 }}</td>
+                <td>{{ user.2 }}</td>
+                <td>{{ user.3 }}</td>
+                <td>{{ user.4 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h3>User that have never Loged_in - date created</h3>
+    <table style="border-collapse:collapse">
+        <tr class ="companyhdr">
+            <th>Name</th>
+            <th>Day</th>
+            <th>Month</th>
+            <th>Year</th>
+            <th>Time</th>
+        </tr>
+
+        {% for user in never_logged_in %}
+            <tr class="companyrow {% cycle '' 'altrow' %}">
+                <td>{{ user.0 }}</td>
+                <td>{{ user.1 }}</td>
+                <td>{{ user.2 }}</td>
+                <td>{{ user.3 }}</td>
+                <td>{{ user.4 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock content %}

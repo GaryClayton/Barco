@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Club Defaults{% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+<h1>Edit Club Defaults</h1>
+
+{% if submitted %}
+    <p class="success">
+        The Club Details have been updated. Thank You.
+    </p>
+{% else %}
+<form action="" enctype="multipart/form-data" method="post" novalidate>
+{% csrf_token %}
+
+{% for field in form %}
+    {% if field.help_text %}
+        <h3>{{ field.help_text }}</h3>
+    {% endif %}
+    <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+    </p>
+{% endfor %}
+
+<p><input type="submit" value="Submit"></p>
+
+</form>
+{% endif %}
+{% endblock content %}
+

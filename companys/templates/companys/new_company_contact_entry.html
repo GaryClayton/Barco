@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Compant Contact Form{% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+<h1>New Company Contact Entry</h1>
+
+{% if submitted %}
+    <p class = "success">
+        The New Company Contact has been added. Thank You.
+    </p>
+{% else %}
+    <form action="" enctype="multipart/form-data" method="post" novalidate>
+    <table>
+        {{ form.as_table }}
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+    {% csrf_token %}
+    </form>
+{% endif %}
+{% endblock content %}

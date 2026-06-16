@@ -1,0 +1,24 @@
+{% extends "quotes/quote.html" %}
+
+{% block title %}Document Delete{% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+
+{% endblock sidenav %}
+
+{% block content %}
+    <h2>The document below has been selected for deletion - Please confirm</h2>
+    <table class = 'company'>
+        <tr><td style="width: 150px;">ID</td><td style="width: 50px;">{{ data.0.0 }}</td></tr>
+        <tr><td style="width: 150px;">Type</td><td style="width: 70px;">{{ data.0.1 }}</td></tr>
+        <tr><td style="width: 150px;">Title (inc path)</td><td style="width: 500px;">{{ data.0.3 }}</td></tr>
+        <tr><td style="width: 150px;">Date</td><td style="width: 100px;">{{ data.0.2 }}</td></tr>
+    </table>
+
+    <h3><a href="/quote/delete_file/{{ data.0.0 }}"><button type="submit">Confirm Delete</button></a></h3>
+
+
+{% endblock content %}

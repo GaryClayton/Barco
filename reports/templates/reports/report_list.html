@@ -1,0 +1,119 @@
+<style>
+/* 1. Force the form to stay on one line and align items */
+.inline-filter-form {
+    display: flex;          /* The magic bullet for alignment */
+    align-items: center;    /* Keeps text and box centered vertically */
+    gap: 10px;              /* Space between label and dropdown */
+    margin-bottom: 20px;
+}
+
+/* 2. Make the label look like an H3 */
+.label-as-h3 {
+    font-size: 1em;      /* Standard H3 size */
+    margin: 0;              /* Removes default spacing that breaks alignment */
+    margin-left: 30px;
+    color: #2a6caa;
+}
+
+/* 3. Optional: Style the select box to look a bit nicer */
+.custom-select {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    cursor: pointer;
+}
+</style>
+
+{% extends "reports/report.html" %}
+
+{% block title %} Reports {% endblock title %}
+
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+
+    <p></p>
+    <table style="border-collapse:collapse">
+        <tr class ="companyhdr">
+            <th style="font-size: 15pt">Please select from available reports available to you below</th>
+        </tr>
+    </table>
+
+    <p>You are eligible to see reports for groups (
+    {% for group in groups %}
+        <span> '{{ group }}',</span>
+    {% endfor %} ) only. </p>
+
+    <p>If you require addition access please user the <b>Contact Us</b> page.</p>
+
+    <h4>Member Reports</h4>
+    <!--
+        <li><a href = '/report/meetings' Title="'Manage your attendance at Business Meetings">Manage Business Meeting Attendance</a></li>
+        <p></p>
+    -->
+    <li><a href="/report/member_groups">View member access rights</a></li>
+    <p></p>
+
+    {% if 'Fundraising' in user.groups.all|join:", " %}
+        <h4>Fundraising Specific Reports</h4>
+            <form method="GET" action="{% url 'crm_list' %}" id="filter-form" class="inline-filter-form">
+                <label for="timespan" class="label-as-h3">Show CRM comments covering:</label>
+                <select name="timespan" onchange="this.form.submit();" class="custom-select">
+                    <option value="day" {% if current_timespan == 'day' %}selected{% endif %}>---- ---</option>
+                    <option value="day" {% if current_timespan == 'day' %}selected{% endif %}>Last Day</option>
+                    <option value="week" {% if current_timespan == 'week' %}selected{% endif %}>Last Week</option>
+                    <option value="month" {% if current_timespan == 'month' %}selected{% endif %}>Last Month</option>
+                    <option value="all" {% if current_timespan == 'all' %}selected{% endif %}>All Time</option>
+                </select>
+            </form>
+    {% endif %}
+
+    {% if 'CommunityService' in user.groups.all|join:", " %}
+        <h4>Community Services Specific Reports</h4>
+        <li>None yet requested</li>
+    {% endif %}
+
+    {% if 'MeetingManager' in user.groups.all|join:", " %}
+        <h4>Meeting Management Specific Reports</h4>
+        <li>None yet requested</li>
+    {% endif %}
+
+    {% if 'DocumentManager' in user.groups.all|join:", " %}
+        <h4>Document Management Specific Reports</h4>
+        <li>None yet requested</li>
+    {% endif %}
+
+    {% if 'Author' in user.groups.all|join:", " %}
+        <h4>Author Specific Reports</h4>
+
+        <li><a href="{% url 'staff_user_list' %}">Manage all users</a></li>
+        <p></p>
+        <li><a href="/company/stats">View database statistics</a></li>
+        <p></p>
+        <li><a href="{% url 'club-defaults' %}">Edit Club Defaults</a></li>
+
+    {% endif %}
+
+    {% if user.is_superuser %}
+
+
+        <h4>SuperUser Specific Reports</h4>
+
+        <li><a href="/admin/">Main administration portal</a></li>
+        <p></p>
+        <p>System Backup of files, they will be stored in main system documents directory.<br>
+            You will have to access the PythonAnywhere Dashboard to retrieve them and <br>
+            they are not visable to Users without access to the Dashboard</p>
+
+        <li><a href = '/report/excel' Title="This process will take a few seconds - be patient">Output Database to excel file</a></li>
+        <li><a href = '/report/word' Title="This process will take a few seconds - be patient">Output Database to word document</a></li>
+        <p></p>
+
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,101 @@
+{% extends "charity/charity.html" %}
+
+{% block title %}Charity Detail{% endblock title %}
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+<!-- <h1>Company Detail</h1> -->
+
+<table class="company">
+    {% for value in data_c %}   <!-- Only one expected -->
+        <tr>
+            {% if 'CommunityService' in user.groups.all|join:"," %}
+                <td>ID:</td><td><a href="/charity/edit-charity/{{ value.0 }}?filter={{ value.0 }}"
+                       title="'Edit Charity Detail">{{ value.0 }}</a></td></tr>
+            {% else %}
+                <tr><td>ID:</td><td>{{ value.0 }}</td></tr>
+            {% endif %}
+        <tr><td>Name:</td><td>{{ value.1 }}</td></tr>
+        <tr><td>Sector:</td><td>{{ value.2 }}</td></tr>
+        <tr><td>Address:</td><td>{{ value.5 }}</td></tr>
+        <tr><td>Telephone:</td><td>{{ value.6 }}</td></tr>
+        <tr><td>Web:</td><td>{{ value.4 }}</td></tr>
+        <tr><td>Number</td><td>{{ value.7 }}</td></tr>
+        <tr><td>Overview:</td><td><a href="../charity_overview/{{ value.0 }}"
+                                     Title="Charity detail taken from charity website">Select for Charity Overview</a></td></tr>
+    {% endfor %}
+</table>
+
+{% if 'CommunityService' in user.groups.all|join:", " %}
+    <p></p><h3>Charity Contact</h3>
+
+    <p><a href=" {% url 'new-charity-contact-entry' %}"
+          title="Add a new contact to this charity, the more details you can provide the better.">
+    Add New Charity Contact </a></p>
+
+    <table style="border-collapse:collapse">
+        <tr class ="companyhdr">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Mobile</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Comment</th>
+        </tr>
+
+        {% for value in data_e %}
+            <tr class="companyrow {% cycle '' 'altrow' %}">
+                {% if 'CommunityService' in user.groups.all|join:"," %}
+                    <td><a href="/charity/edit-charity-contact/{{ value.0 }}?filter={{ value.0 }}"
+                           title="Edit 'Charity Contact' details to help maintain accuracy.">{{ value.0 }}</a></td>
+                {% else %}
+                    <td>{{ value.0 }}</td>
+                {% endif %}
+                <td>{{ value.1 }}</td>
+                <td>{{ value.2 }}</td>
+                <td>{{ value.3 }}</td>
+                <td>{{ value.4 }}</td>
+                <td>{{ value.5 }}</td>
+                <td>{{ value.6 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+<p></p><h3>Donations Made</h3>
+
+{% if 'CommunityService' in user.groups.all|join:", " %}
+    <p><a href=" {% url 'new-charity-donation-entry' %}"
+          title="Add a new donation to this charity.">
+    Add New Charity Donation </a></p>
+{% endif %}
+
+<table style="border-collapse:collapse">
+    <tr class ="companyhdr">
+        <th>ID</th>
+        <th>Date (fy)</th>
+        <th>Comment</th>
+        <th>Value</th>
+    </tr>
+
+    {% for value in data_d %}
+        <tr class="companyrow {% cycle '' 'altrow' %}">
+            {% if 'CommunityService' in user.groups.all|join:"," %}
+                <td><a href="/charity/edit-charity-donation/{{ value.0 }}?filter={{ value.0 }}"
+                       title="Edit 'Charity Donation' details to help maintain accuracy.">{{ value.0 }}</a></td>
+            {% else %}
+                <td>{{ value.0 }}</td>
+            {% endif %}
+            <td>{{ value.1 }}</td>
+            <td>{{ value.3 }}</td>
+            <td>{{ value.2 }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

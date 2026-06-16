@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+{% extends "base.html" %}
+
+{% block title %}Edit{% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+<head>
+    <title>Edit table information</title>
+</head>
+{% if submitted %}
+    <p class = "success">
+        The Charity entry has been updated. Thank You.
+    </p>
+{% else %}
+    <h1>Edit Entry</h1>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+            <tr>
+                <td>&nbsp;</td>
+                <!-- <button type="submit">Save Changes</button> -->
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+
+    </form>
+
+{% endif %}
+{% endblock content %}
+</html>

@@ -1,0 +1,35 @@
+
+{% extends "reports/report.html" %}
+
+{% block title %}CRM by date created{% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+
+    <h3>Company Relationship Management entries in date range - {{ current_timespan }}</h3>
+
+    <table style="border-collapse:collapse">
+         <tr class ="companyhdr">
+             <th>User</th>
+            <th>Company</th>
+            <th>Date (GMT)</th>
+            <th>Comment</th>
+         </tr>
+
+        {% for crm in crm_set %}
+            <tr class="companyrow {% cycle '' 'altrow' %}">
+                <td>{{ crm.username }}</td>
+                <td>{{ crm.company.name }}</td>
+                <td>{{ crm.created }}</td>
+                <td>{{ crm.comment }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <p></p>
+
+{% endblock content %}

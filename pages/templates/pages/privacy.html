@@ -1,0 +1,33 @@
+{% extends "pages/page.html" %}
+
+{% block title %}Privacy Policy{% endblock title %}
+
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+
+{% endblock sidenav %}
+
+{% block content %}
+    <section class="rotary-intro">
+        <h2>Privacy Policy</h2>
+        <p style="font-size: 15px; margin-top: 40px;">The Bury St Edmunds Abbey Rotary Club (BARC)
+            raises funds for local charities, BARC collects company contact information that is
+            used in conjunction with arranging events.<br><br>
+
+        In line with this stated aim of raising funds for local charities, BARC
+        collects company contact information that is used in conjunction with arranging its events. <br><br>
+
+        BARC does not send general advertising emails and any contact is specific to an event we are organising.<br><br>
+
+        BARC also does not supply any compay or individual specific information to any third party.<br><br>
+
+        Access to individual contact information is limited to specific members of BARC that
+        are directly involved in organising events and is not availble to the wider BARC membership.<br><br>
+
+        If you wish to find out what information is held, and/or ask for it
+        to be removed, please use the <a href="https://garyclayton.pythonanywhere.com/contact">Contact</a> link provided.</p>
+    </section>
+{% endblock content %}

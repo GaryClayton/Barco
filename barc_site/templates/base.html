@@ -1,0 +1,165 @@
+{% load static %}
+<html>
+<style>
+/* ---------------------------
+   FUNDRAISING DROPDOWN (CLEAN)
+   --------------------------- */
+
+/* Parent item */
+#leftsidebar #nav .dropdown {
+    position: static !important;
+}
+
+/* Arrow */
+#leftsidebar #nav .dropdown .arrow {
+    font-size: 0.7em;
+    margin-left: 6px;
+    opacity: 0.5;
+    transition: transform 0.25s ease;
+}
+
+/* Submenu container */
+#leftsidebar #nav .dropdown-menu {
+    position: static !important;
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin: 4px 0 0 0;
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+}
+
+/* Show submenu */
+#leftsidebar #nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Rotate arrow */
+#leftsidebar #nav .dropdown:hover .arrow {
+    transform: rotate(90deg);
+}
+
+/* ---------------------------
+   SUBMENU ITEM CLEANUP
+   --------------------------- */
+
+/* Remove theme borders/padding/background from submenu items */
+#leftsidebar #nav .dropdown-menu li {
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Submenu link styling */
+#leftsidebar #nav .dropdown-menu li a {
+    display: block;
+    text-align: right;
+    padding: 6px 0 !important;
+    margin-right: 10px;
+    font-size: inherit;
+    color: #0d6efd;
+    font-weight: 400;
+    line-height: 1.2;
+    text-decoration: none;
+
+    /* Remove theme styling */
+    border: none !important;
+    background: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Hover effect */
+#leftsidebar #nav .dropdown-menu li a:hover {
+    text-decoration: underline;
+    color: #0d6efd;
+    background: none !important;
+}
+
+</style>
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% block title %}
+            Untitled Document
+        {% endblock title %}
+    </title>
+     {% include "_bootstrap.html" %}
+    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+    <link rel ="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+<div id="wrapper">
+    <header id="header">
+        <div>
+            <a href="https://www.rotary-ribi.org/clubs/homepage.php?ClubID=1968"
+               title='Link to Bury St Edmunds website' target="_blank">
+                <img src="{% static 'barco_croped.png' %}" alt=""/>
+            </a>
+            <span style="float: right;">
+                {% if user.is_authenticated %}
+                    Hello, {{ user.username }}. <a href="{% url 'logout' %}?next=/">Log out</a>.
+                {% else %}
+                    Not logged in. <a href="{% url 'login' %}?next=/">Log in</a>.
+                {% endif %}
+            </span>
+        </div>
+    </header>
+    <aside id="leftsidebar">
+        <nav id="nav">
+            <ul>
+                {% block sidenav %}
+                    {% for page in Page_list %}
+                        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                {% endblock sidenav %}
+                <li><a href="/contact">Contact Us</a></li>
+
+                {% if user.is_authenticated %}
+                     <li class="dropdown">
+                        <a class="dropdown-link">
+                            Fundraising <span class="arrow">▶</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/event/show">Events</a></li>
+                            <li><a href="/company/show">Companies</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/charity/show">Charities</a></li>
+                    <li><a href="/quote/show">Documents</a></li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-link">
+                            Mtgs & Reports<span class="arrow">▶</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/report/meetings/Meeting">Club Meetings</a></li>
+                            <li><a href="/report/meetings/Social">Social Meetings</a></li>
+                            <li><a href="/report/show">Reports</a></li>
+                        </ul>
+                    </li>
+                    <!--
+                        <li><a href="/report/show">Meetings & Reports</a></li>
+                    -->
+                {% else %}
+                    <li><a href="/privacy_policy">Privacy Policy</a></li>
+                {% endif %}
+
+            </ul>
+        </nav>
+    </aside>
+    <section id="main">
+        {% block content %}
+            <h1>Welcome!</h1>
+            <p>This is the site template</p>
+        {% endblock content %}
+    </section>
+
+    <footer id="footer">Copyright &copy; 2026 The Rotary Club of Bury St Edmunds Abbey</footer>
+</div>
+</body>
+</html>

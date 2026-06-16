@@ -1,0 +1,39 @@
+{{% extends "base.html" %}
+
+{% block title %}Meeting Attendance {% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+<h1>Manage Meeting Attendance</h1>
+
+{% if submitted %}
+    <p class = "success">
+        Your attendance has been updated. Thank You.
+    </p>
+{% else %}
+    <h3>Member: {{ details.0 }}</h3>
+    <h3>Meeting: {{ details.3 }}</h3>
+    <h3>Location: {{ details.4 }}</h3>
+    <h3>Date: {{ details.5 }}</h3>
+    <h3>Time: {{ details.6 }}</h3>
+    <form action="" enctype="multipart/form-data" method="post" novalidate>
+    <table>
+        {{ form.as_table }}
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+    {% csrf_token %}
+    </form>
+
+    <p>If you are registered to attend the Meeting but are unable to stay for the meal,
+         please let the Meetign Secretary know. </p>
+
+{% endif %}
+{% endblock content %}

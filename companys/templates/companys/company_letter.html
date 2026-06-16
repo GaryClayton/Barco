@@ -1,0 +1,31 @@
+{% extends "companys/company.html" %}
+
+{% block title %}All Companys{% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+
+    <h3>Companies listed by letter {{ letter }}</h3>
+   <table style="border-collapse:collapse">
+    <tr class ="companyhdr">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Sector</th>
+        <th>Subsector</th>
+    </tr>
+    {% for comp in cont %}
+        <tr class="companyrow {% cycle '' 'altrow' %}">
+            <td>{{ comp.0 }}</td>
+            <td><a href="/company/show/{{ comp.0 }}?filter={{ comp.0 }}">{{ comp.1 }}</a></td>
+            <td>{{ comp.2 }}</td>
+            <td>{{ comp.3 }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

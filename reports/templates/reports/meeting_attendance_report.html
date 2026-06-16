@@ -1,0 +1,85 @@
+{% extends "reports/report.html" %}
+
+{% block title %} Meeting Report {% endblock title %}
+
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+
+    <h3><u>Meeting attendance report for :- <b>{{ meeting }}</b></u></h3>
+
+    {% if 'MeetingManager' in user.groups.all|join:", " %}
+        <p>As a member of the MeetingManager group you may :-
+        <a href="../email_meeting_report/{{ id }}?filter={{ id }}"
+              title="Email report to your stored address and bseabbey@gmail.com">Email report</a></p>
+        {% if email is True %}
+            <p class = 'success'>Your email report has been sent - Please check your inbox</p>
+        {% endif %}
+    {% endif %}
+
+        <h3>Summary</h3>
+            <p>Number of Guests         {{ stats.2 }}<br>
+                Members Attending        {{ stats.0 }}<br>
+                Members Not Attending    {{ stats.1 }}<br>
+                <b>Total number of meals    {{ stats.3 }}</b>
+            </p>
+
+    <h3>Guests {{ stats.2 }}</h3>
+    <table style="border-collapse:collapse">
+        <tr class ="companyhdr">
+            <th>Name</th>
+            <th>Dietary Requirements</th>
+            <th>Comment</th>
+            <th>Sponsor</th>
+        </tr>
+        {% for att in guests %}
+            <tr class="companyrow {% cycle '' 'altrow' %}">
+                <td>{{ att.0 }}</td>
+                <td>{{ att.2 }}</td>
+                <td>{{ att.3 }}</td>
+                <td>{{ att.1}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Members Attending {{ stats.0 }}</h3>
+    <table style="border-collapse:collapse">
+        <tr class ="companyhdr">
+            <th>Surname</th>
+            <th>Name</th>
+            <th>Dietary Requirements</th>
+        </tr>
+
+        {% for att in attending %}
+            <tr class="companyrow {% cycle '' 'altrow' %}">
+                <td>{{ att.4 }}</td>
+                <td>{{ att.3 }}</td>
+                <td>{{ att.2 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+    <h3>Members Not Attending {{ stats.1 }}</h3>
+        <table style="border-collapse:collapse">
+            <tr class ="companyhdr">
+                <th>Surname</th>
+                <th>Name</th>
+                <th>Dietary Requirements</th>
+            </tr>
+
+            {% for att in not_attending %}
+                <tr class="companyrow {% cycle '' 'altrow' %}">
+                    <td>{{ att.4 }}</td>
+                    <td>{{ att.3 }}</td>
+                    <td>{{ att.2 }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+{% endblock content %}
+

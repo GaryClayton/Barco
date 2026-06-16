@@ -1,0 +1,63 @@
+{% extends "quotes/quote.html" %}
+
+{% block title %}Document Repository{% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+
+{% endblock sidenav %}
+
+
+{% block content %}
+
+    <style>
+        .type-flex {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1.5rem;
+                    }
+    </style>
+
+    <h2>Document types available in database</h2>
+
+    <!--
+    <p><a href="https://www.dropbox.com/home"
+          TITLE="Visit the main document storage facility on Dropbox"
+          target="_blank">Dropbox - external site</a>
+    </p>
+    -->
+    <p></p>
+    <div  class="type-flex">
+    {% for t in types %}
+        <a href="quote_type/{{ t }}?filter={{ t }}" title="Filter documents by type">'{{ t }}'</a>
+    {% endfor %}
+    </div>
+
+    <h3><a href="/quote/">Add document - please ensure document is not already available</a></h3>
+    <p>Please ensure that you have the correct application to open any file downloaded</p>
+
+    <h2>All selected documents</h2>
+
+    <table style="border-collapse:collapse">
+        <tr class ="companyhdr">
+            <th>ID</th>
+            <th>Document Type</th>
+            <th>Title</th>
+            <th>Meeting Date</th>
+            <th>File Type</th>
+            <th>Download</th>
+        {% for quote in data %}
+            <tr class="companyrow {% cycle '' 'altrow' %}">
+                <td>{{ quote.0 }}</td>
+                <td style="width: 50px;">{{ quote.1 }}</td>
+                <td style="width: 175px;">{{ quote.2 }}</td>
+                <td style="width: 100px;">{{ quote.3 }}</td>
+                <td style="width: 50px;">{{ quote.7 }}</td>
+                <td><a href="?filename={{ quote.5.name }}" target="_blank" >Download File</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
+

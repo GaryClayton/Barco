@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Quote Login{% endblock title %}
+
+{% block sidenav %}
+    <li><a href="/">Home</a></li>
+{% endblock sidenav %}
+
+{% block content %}
+<h1>Please Login</h1>
+<p>You must be logged in to view databases.</p>
+
+<form method="post" action="{% url 'login' %}">
+    <table>
+
+        <!-- Username row -->
+        <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+
+        <!-- Password row with SVG eye inside the box -->
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>
+                <div style="position: relative; display: inline-block; width: 100%;">
+                    {{ form.password }}
+
+                    <!-- Line-style eye icon -->
+                    <span id="togglePassword"
+                          style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;">
+                        <svg width="20" height="20" viewBox="0 0 24 24">
+                            <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"
+                                  fill="none" stroke="black" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="3"
+                                    fill="none" stroke="black" stroke-width="2"/>
+                        </svg>
+                    </span>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Submit button -->
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="login"></td>
+        </tr>
+
+    </table>
+
+    <input type="hidden" name="next" value="{{ next }}" />
+    {% csrf_token %}
+</form>
+
+<!-- Toggle script -->
+<script>
+    const toggle = document.getElementById('togglePassword');
+    const password = document.getElementById('id_password');
+
+    toggle.addEventListener('click', () => {
+        password.type = password.type === 'password' ? 'text' : 'password';
+    });
+</script>
+
+{% endblock content %}
+
+

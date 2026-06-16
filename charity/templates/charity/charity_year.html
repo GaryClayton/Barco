@@ -1,0 +1,31 @@
+{% extends "companys/company.html" %}
+
+{% block title %}All Charities supported in year{% endblock title %}
+
+{% block sidenav %}
+    {% for page in Page_list %}
+        <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+
+    <h3>Charity donations made by Club in {{ year }}</h3>
+    <table style="border-collapse:collapse">
+    <tr class ="companyhdr">
+        <th>Charity</th>
+        <th>Date</th>
+        <th>Donation</th>
+        <th>Comment</th>
+    </tr>
+    {% for entry in donation %}
+        <tr class="companyrow {% cycle '' 'altrow' %}">
+            <td><a href="/charity/show/{{ entry.4 }}?filter={{ entry.4 }}">{{ entry.0 }}</a></td>
+            <td style="width:20%;">{{ entry.1 }}</td>
+            <td>{{ entry.2 }}</td>
+            <td>{{ entry.3 }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}
